@@ -20,7 +20,7 @@ private:
         "grupo_imagenes_3_corruptas",
         "ij_image_samples"
     };
-    string raiz = "C:/Users/aniba/Desktop/Prog_AV/Imagenes";
+    string raiz = "C:/Users/aniba/Desktop/Prog_AV/Imagenes/";
 
 };
 

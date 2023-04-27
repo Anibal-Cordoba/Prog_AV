@@ -1,5 +1,6 @@
 #include "espaciotrabajo.h"
-
+#include <iostream>
+using namespace std;
 EspacioTrabajo::EspacioTrabajo()
 {
 
@@ -16,6 +17,7 @@ vector<string> EspacioTrabajo::devolverImagenes(int num_carpeta)
 {
     string carpetaSeleccionada = raiz + carpetas[num_carpeta-1];
     vector<string> imagenes;
+    cout<<"ruta:"<<carpetaSeleccionada;
     DIR *dir = opendir(carpetaSeleccionada.c_str());
     if (dir != NULL)
     {

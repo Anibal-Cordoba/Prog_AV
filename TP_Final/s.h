@@ -1,5 +1,5 @@
-#ifndef INTERFAZUSUARIO_H
-#define INTERFAZUSUARIO_H
+#ifndef S_H
+#define S_H
 #include <vector>
 #include <string>
 #include <dirent.h>
@@ -10,10 +10,10 @@ class InterfazUsuario
 {
 public:
     InterfazUsuario();
-    int obtenerOpcionImagenes(int num_carpeta);
+
     int obtenerOpcionCarpetas();
     void mostrarNombresImagenes(int num_carpeta);
     void mostrarNombresCarpetas();
 };
 
-#endif // INTERFAZUSUARIO_H
+#endif // S_H

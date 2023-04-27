@@ -9,8 +9,13 @@ CONFIG -= app_bundle
 
 SOURCES += \
         espaciotrabajo.cpp \
-        interfazusuario.cpp \
-        main.cpp
+        gestoraic.cpp \
+        gestordearchivos.cpp \
+        gestorpnm.cpp \
+        imagen.cpp \
+        main.cpp \
+        pixel.cpp \
+        sistemaoperativo.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -19,4 +24,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     espaciotrabajo.h \
-    interfazusuario.h
+    gestoraic.h \
+    gestordearchivos.h \
+    gestorpnm.h \
+    imagen.h \
+    pixel.h \
+    sistemaoperativo.h
