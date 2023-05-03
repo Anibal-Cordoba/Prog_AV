@@ -2,6 +2,10 @@
 #define GESTORPNM_H
 #include "gestordearchivos.h"
 
+
+
+
+
 class GestorPNM: public GestordeArchivos
 {
 public:

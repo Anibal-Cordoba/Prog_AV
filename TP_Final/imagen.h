@@ -2,7 +2,9 @@
 #define IMAGEN_H
 #include "pixel.h" //composicion
 #include <vector>
+#include <string>
 using namespace std;
+
 class Imagen
 {
     public:
@@ -17,13 +19,25 @@ class Imagen
 
         int getColumna();
 
+        void setRango(int nRango);
+
+        int getRango();
+
+        void setComentario(string coment);
+
+        string getComent();
+
+        void setIdentificador(string ident);
+
+        string getIdentif();
+
         void setPixel(int fila, int columna,Pixel pixel);
 
         void setTamanioImagen(int fila, int columna);
 
     private:
-        int fila;
-        int columna;
+        int fila, columna, rango;
+        string identificador, comentario;
         vector <vector<Pixel>> imagen;
 };
 
