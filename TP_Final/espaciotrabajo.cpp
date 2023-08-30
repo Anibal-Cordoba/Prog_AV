@@ -17,7 +17,6 @@ vector<string> EspacioTrabajo::devolverImagenes(int num_carpeta)
 {
     string carpetaSeleccionada = raiz + carpetas[num_carpeta-1];
     vector<string> imagenes;
-    cout<<"ruta:"<<carpetaSeleccionada;
     DIR *dir = opendir(carpetaSeleccionada.c_str());
     if (dir != NULL)
     {
@@ -38,4 +37,24 @@ vector<string> EspacioTrabajo::devolverImagenes(int num_carpeta)
 vector<string> EspacioTrabajo::devolverCarpetas()
 {
     return carpetas;
+}
+
+string EspacioTrabajo::leerExtencion(string ruta)
+{
+    string extension,pnm_aic;
+
+    extension = ruta.substr(ruta.length()-3);
+
+    if (extension == "pnm" or extension =="pbm" or extension =="pgm" or extension =="ppm")
+    {
+        pnm_aic = "pnm";
+    }
+    else if (extension == "aic")
+    {
+        pnm_aic = "aic";
+    }
+//    else: levantar un error
+
+
+    return extension;
 }

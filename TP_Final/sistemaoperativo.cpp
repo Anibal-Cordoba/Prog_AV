@@ -10,17 +10,22 @@ void SistemaOperativo::correr()
 {
     int opcionCarpeta = obtenerOpcionCarpetas();
     int opcionImagen = obtenerOpcionImagenes(opcionCarpeta);
+
+    string ruta = espaciodetrabajo.devolverRuta(opcionImagen, opcionCarpeta);
+    cout<<endl<<ruta<<endl;
+
+    GestorPNM gestor;
+    Imagen imagen = gestor.leer(ruta);
     //llamar al visualizador
 }
 //un metodo obtener opciones que integre las dos facilitando despues mi clase sistema.
 int SistemaOperativo::obtenerOpcionImagenes(int num_carpeta)
 {
-   // system("cls");//para limpiar la consola {que el otro limpie mi mierda}
+    system("cls");//para limpiar la consola {que el otro limpie mi mierda}
 
 
     int opcion;
 
-    EspacioTrabajo espaciodetrabajo;
     vector<string> imagen = espaciodetrabajo.devolverImagenes(num_carpeta);
 
 
@@ -38,7 +43,6 @@ int SistemaOperativo::obtenerOpcionCarpetas()
 {
     system("cls");
 
-    EspacioTrabajo espaciodetrabajo;
     vector<string> carpeta = espaciodetrabajo.devolverCarpetas();
     int opcion;
 

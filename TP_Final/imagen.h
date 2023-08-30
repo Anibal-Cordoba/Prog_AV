@@ -33,7 +33,7 @@ class Imagen
 
         void setPixel(int fila, int columna,Pixel pixel);
 
-        void setTamanioImagen(int fila, int columna);
+        void setTamanioImagen(int fila = 0, int columna = 0);
 
     private:
         int fila, columna, rango;

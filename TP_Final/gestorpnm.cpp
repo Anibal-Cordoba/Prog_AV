@@ -15,13 +15,17 @@ Imagen GestorPNM::leer(string ruta)
     ifstream archivo;
     archivo.open(ruta);
 
-    archivo>>identificador;
+//    archivo>>identificador;
+    getline(archivo, linea);
+    identificador = linea;
 
+    int pos = archivo.tellg();
     while (getline(archivo,linea))
     {
-        if (linea[0]!= '#')
+        if (linea[0] != '#')
         {
-            stringstream ss(linea);//hace como que estas leyendo el archivo
+            stringstream ss(linea);
+//            archivo.seekg(pos+1);
             ss >> c >>f;
             break;
         }
@@ -51,6 +55,7 @@ Imagen GestorPNM::leer(string ruta)
         case '1':
             todavianose;
             //img monocrom y pixeles como texto;
+            break;
         case '2':
             archivo.open(ruta);
             archivo.seekg(posicion);
@@ -65,10 +70,13 @@ Imagen GestorPNM::leer(string ruta)
                 }
             }
             archivo.close();
+            break;
         case '3':
             todavianose;
+            break;
         case '4':
             todavianose;
+            break;
         case '5':
             archivo.open(ruta,ios::binary);
             archivo.seekg(posicion);
@@ -84,13 +92,16 @@ Imagen GestorPNM::leer(string ruta)
                 }
             }
             archivo.close();
+            break;
 
         case '6':
             archivo.open(ruta,ios::binary);
             archivo.seekg(posicion);
 
+            img.setTamanioImagen();
             for(int fila = 0; fila<f; fila++)
             {
+
                 for(int columna = 0; columna<c;columna++)
                 {
                     archivo.read((char*)&rojo, sizeof(pixelbin));
@@ -102,11 +113,10 @@ Imagen GestorPNM::leer(string ruta)
                 }
             }
             archivo.close();
+            break;
 
-
-
-
+    }
     return img;
 
-
 }
+

@@ -5,6 +5,8 @@
 #include <dirent.h>
 #include <iostream>
 #include "espaciotrabajo.h"
+#include "imagen.h"
+#include "gestorpnm.h"
 using namespace std;
 
 class SistemaOperativo
@@ -14,6 +16,8 @@ public:
     void correr();
     int obtenerOpcionImagenes(int num_carpeta);
     int obtenerOpcionCarpetas();
+private:
+    EspacioTrabajo espaciodetrabajo;
 
 };
 
