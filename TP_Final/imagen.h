@@ -31,14 +31,16 @@ class Imagen
 
         string getIdentif();
 
-        void setPixel(int fila, int columna,Pixel pixel);
+        void setPixel(int p_fila, int p_columna,Pixel p_pixel);
 
-        void setTamanioImagen(int fila = 0, int columna = 0);
+        Pixel getPixel(int p_fila, int p_columna);
+
+        void setTamanioImagen();
 
     private:
-        int fila, columna, rango;
+        int filas, columnas, rango;
         string identificador, comentario;
-        vector <vector<Pixel>> imagen;
+        vector <vector<Pixel>> pixeles;
 };
 
 #endif // IMAGEN_H

@@ -1,22 +1,39 @@
 #include "sistemaoperativo.h"
 
 
-SistemaOperativo::SistemaOperativo()
+SistemaOperativo::SistemaOperativo(/*QApplication *app*/)
 {
-
+//    qAppl = app;
 }
 
-void SistemaOperativo::correr()
+
+
+void SistemaOperativo::correr(QApplication *app)
 {
-    int opcionCarpeta = obtenerOpcionCarpetas();
-    int opcionImagen = obtenerOpcionImagenes(opcionCarpeta);
+    while(true)
+    {
+        int opcionCarpeta = obtenerOpcionCarpetas();
+        int opcionImagen = obtenerOpcionImagenes(opcionCarpeta);
 
-    string ruta = espaciodetrabajo.devolverRuta(opcionImagen, opcionCarpeta);
-    cout<<endl<<ruta<<endl;
+        /*
+        string ruta = espaciodetrabajo.devolverRuta(opcionImagen, opcionCarpeta);
+        cout<<endl<<ruta<<endl;
 
-    GestorPNM gestor;
-    Imagen imagen = gestor.leer(ruta);
-    //llamar al visualizador
+        system("cls");
+
+
+        //esto despues es un metodo con el aic
+        GestorPNM gestor;
+        Imagen imagen = gestor.leer(ruta);
+        */
+
+        //llamar al visualizador pasando las opciones
+        VentanaDeGraficacion graficador;
+        graficador.cargarImagen(opcionCarpeta,opcionImagen);
+        graficador.GraficarImagen();
+        graficador.show();
+        app->exec();
+    }
 }
 //un metodo obtener opciones que integre las dos facilitando despues mi clase sistema.
 int SistemaOperativo::obtenerOpcionImagenes(int num_carpeta)

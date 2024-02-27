@@ -39,9 +39,9 @@ vector<string> EspacioTrabajo::devolverCarpetas()
     return carpetas;
 }
 
-string EspacioTrabajo::leerExtencion(string ruta)
+string EspacioTrabajo::leerExtension(string ruta)
 {
-    string extension,pnm_aic;
+    string extension, pnm_aic;
 
     extension = ruta.substr(ruta.length()-3);
 
@@ -56,5 +56,11 @@ string EspacioTrabajo::leerExtencion(string ruta)
 //    else: levantar un error
 
 
-    return extension;
+    return pnm_aic;
 }
+
+int EspacioTrabajo::cantidadImagenes(int num_carpeta)
+{
+    return devolverImagenes(num_carpeta).size();
+}
+

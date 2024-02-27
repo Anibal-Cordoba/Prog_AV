@@ -1,7 +1,8 @@
 #ifndef PIXEL_H
 #define PIXEL_H
 #include <algorithm>
-//using namespace std;
+#include <iostream>
+using namespace std;
 
 class Pixel
 {
@@ -27,6 +28,7 @@ class Pixel
         int rojo;
         int verde;
         int azul;
-};
 
+};
+ostream& operator<<(ostream& out, Pixel p_pixel);
 #endif // PIXEL_H

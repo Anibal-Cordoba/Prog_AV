@@ -1,7 +1,12 @@
 QT -= gui
 
-CONFIG += c++11 console
+CONFIG += c++11 console qt
 CONFIG -= app_bundle
+
+
+
+QT += widgets
+LIBS += -lopengl32
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -15,7 +20,8 @@ SOURCES += \
         imagen.cpp \
         main.cpp \
         pixel.cpp \
-        sistemaoperativo.cpp
+        sistemaoperativo.cpp \
+        ventanadegraficacion.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -29,4 +35,5 @@ HEADERS += \
     gestorpnm.h \
     imagen.h \
     pixel.h \
-    sistemaoperativo.h
+    sistemaoperativo.h \
+    ventanadegraficacion.h

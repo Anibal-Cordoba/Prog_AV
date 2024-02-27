@@ -6,7 +6,7 @@
 
 
 
-class GestorPNM: public GestordeArchivos
+class GestorPNM: public GestorDeArchivos
 {
 public:
     GestorPNM();

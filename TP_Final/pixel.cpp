@@ -30,6 +30,12 @@ void Pixel::setRGB(int intensidadRojo, int intensidadVerde, int intensidadAzul)
         azul = intensidadAzul;
 
 }
+
+ostream& operator<<(ostream& out, Pixel p_pixel)
+{
+    out<<"r:"<<p_pixel.getRojo()<<" g:"<<p_pixel.getVerde()<<" b:"<<p_pixel.getAzul();
+}
+
 /*
 void Pixel::establecerRojo(int intensidadRojo)
 {

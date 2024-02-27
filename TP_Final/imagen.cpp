@@ -8,22 +8,22 @@ Imagen::Imagen()
 
 void Imagen::setFila(int nFila)
 {
-    fila = nFila;
+    filas = nFila;
 }
 
 int Imagen::getFila()
 {
-    return fila;
+    return filas;
 }
 
 void Imagen::setColumna(int nColumna)
 {
-    columna = nColumna;
+    columnas = nColumna;
 }
 
 int Imagen::getColumna()
 {
-    return columna;
+    return columnas;
 }
 
 void Imagen::setRango(int nRango)
@@ -56,26 +56,36 @@ string Imagen::getIdentif()
     return identificador;
 }
 
-void Imagen::setPixel(int fila, int columna, Pixel pixel)
+void Imagen::setPixel(int p_fila, int p_columna, Pixel p_pixel)
 {
-    imagen[fila][columna] = pixel;
+    pixeles[p_fila][p_columna] = p_pixel;
 }
 
-void Imagen::setTamanioImagen(int nFila, int nColumna)
+Pixel Imagen::getPixel(int p_fila, int p_columna)
 {
-    //aca lo que hago es primero hago un vector de la cantidad de columnas y luegoa cada columna le hago un rezise con la cantidad de filas.
-    if (nFila != 0 and nColumna != 0){
-        imagen.resize(nColumna);
-        for (unsigned int i=0; i<imagen.size(); ++i)
-        {
-            imagen[i].resize(nFila);
-        }
-    } else
+    return pixeles[p_fila][p_columna];
+}
+
+
+
+void Imagen::setTamanioImagen()
+{
+    //aca lo que hago es primero hago un vector de la cantidad de fila y luegoa cada columna le hago un rezise con la cantidad de columna.
+    //hago un resize para que pueda setear los pixeles, como ya pase f y c la primera parte es para consistencia la segunda es la q se usa
+    if (filas != 0 and columnas != 0)
     {
-        imagen.resize(columna);
-        for (unsigned int i=0; i<imagen.size(); ++i)
+        pixeles.resize(filas);
+        for (int i=0; i<filas; ++i)
+
         {
-            imagen[i].resize(fila);
+            pixeles[i].resize(columnas);
+        }
+    } else//deberia levantar un error si la imagen no tiene dimensiones
+    {
+        pixeles.resize(1);
+        for (int i=0; i<filas; ++i)
+        {
+            pixeles[i].resize(1);
         }
     }
 
